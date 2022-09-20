@@ -1,0 +1,205 @@
+
+.bodies{
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center ;
+  height: 32vh;
+
+}
+
+#name {
+    float: left;
+    color: white;
+    font-size: 25mm;
+    font-family: "Audiowide", sans-serif;
+    word-spacing: 10px;
+    margin-left: 5%;
+    z-index: 1;
+}
+
+nav {
+    color: white;
+    float: right;
+    margin-top: 5mm;
+    margin-right: 5%;
+    word-spacing: 15px;
+}
+
+nav,
+
+a {
+
+    text-decoration: none;
+    font-family: "Audiowide", sans-serif;
+    font-size: 18px;
+    transition: all .2s ease-in-out;
+
+    --s: 0.1em;   /* the thickness of the line */
+    --c: orange; /* the color */
+ 
+    
+    color: white;
+    padding-bottom: var(--s);
+    background: 
+      linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+      linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: 0.5s;
+}
+
+nav a:hover {
+  color: orange;
+  transition: 0.5s;
+  letter-spacing: 3px;
+    --_p: 100%
+}
+
+
+
+  .inverted-1:hover {  
+    background-position:left;
+  }
+
+  /*IMAGE ARROW*/
+
+
+
+
+  @media screen and (min-width: 480px) {
+   
+  }
+  body {
+    background: #111;
+  }
+
+
+
+
+  /*TEXT DESIGNER UX/UI*/
+  .hidden {
+    opacity:0;
+  }
+  .console-container {
+   
+    font-family: "Audiowide", sans-serif;
+    font-size:2em;
+    text-align:center;
+    height:200px;
+    width:600px;
+    display:block;
+    position:absolute;
+    color:orange;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    z-index: 1;
+  }
+  .console-underscore {
+     display:inline-block;
+    position:relative;
+    top:-0.14em;
+    left:10px;
+  }
+
+
+  /*CIRCLE*/
+
+  .circle {
+    background: #111;
+    border-radius: 50%;
+    border: 1px solid #111;
+    border-left: 3px solid grey;
+    border-top: 1.5px solid grey ;
+    border-bottom: 1.5px solid grey ;
+    transform: rotate(-45deg);
+    width: 400px;
+    height: 400px;
+    position:absolute;
+    display:block;
+    top:50mm;
+    bottom:0;
+    left:0;
+    right:70mm;
+    margin:auto;
+    opacity: 0.4;
+}
+
+#show{
+  color: whitesmoke;
+  text-align: center;
+  opacity: 0.6;
+}
+.inside{
+  font-family: "Audiowide", sans-serif;
+  font-size:23px;
+  text-align:center;
+  height:200px;
+  width:200px;
+  display:block;
+  position:absolute;
+  top:75mm;
+  bottom:0;
+  left:0;
+  right:70mm;
+  margin:auto;
+  z-index: 1;
+  letter-spacing: 5px;
+}
+
+#show:hover{
+  letter-spacing: 3px;
+  color: #1095c1;
+  cursor: zoom-out;
+    opacity: 1;
+}
+
+
+.foot {
+   
+  font-family: "Audiowide", sans-serif;
+  font-size:15px;
+  text-align:justify;
+  height:200px;
+  width:400px;
+  display:block;
+  position:absolute;
+  color:grey;
+  top:150mm;
+  bottom:0;
+  left:70mm;
+  right:0;
+  margin:auto;
+  z-index: 1;
+}
+
+#statement:hover{
+  font-size: 17px;
+  transition: 0.7s;
+}
+
+
+
+/*TRANSITION*/
+
+#show {
+  --b: 0.1em;   /* the thickness of the line */
+  --c: #1095c1; /* the color */
+  
+  color: whitesmoke;
+  padding-block: var(--b);
+  background: 
+    linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+}
+#show:hover {
+  --_p: 100%;
+  --_s: .3s;
+}
