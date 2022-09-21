@@ -1,7 +1,68 @@
-body{
+body {
     background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
-nav {
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+
+
+}
+.box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+
+
+}
+
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form{
+    position: absolute;
+    inset: 2px;
+    background: #28292d;
+    z-index: 10;
+    border-radius: 8px;
+}
+
+/* nav {
     color: white;
     float: right;
     margin-top: 5mm;
@@ -18,8 +79,8 @@ a {
     font-size: 18px;
     transition: all .2s ease-in-out;
 
-    --s: 0.1em;   /* the thickness of the line */
-    --c: orange; /* the color */
+    --s: 0.1em;   
+    --c: orange; 
  
     
     color: white;
@@ -37,4 +98,11 @@ nav a:hover {
   transition: 0.5s;
   letter-spacing: 3px;
     --_p: 100%
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Audiowide", sans-serif;
 }
