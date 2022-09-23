@@ -70,10 +70,11 @@ nav a:hover {
 
   @media screen and (min-width: 480px) {
    
-  }
+ 
   body {
     background: #111;
   }
+   }  
 
 
 
@@ -92,7 +93,7 @@ nav a:hover {
     display:block;
     position:absolute;
     color:orange;
-    top:0;
+    top:45mm;
     bottom:0;
     left:0;
     right:0;
@@ -121,7 +122,7 @@ nav a:hover {
     height: 400px;
     position:absolute;
     display:block;
-    top:50mm;
+    top:100mm;
     bottom:0;
     left:0;
     right:70mm;
@@ -142,7 +143,7 @@ nav a:hover {
   width:200px;
   display:block;
   position:absolute;
-  top:75mm;
+  top:110mm;
   bottom:0;
   left:0;
   right:70mm;
@@ -169,7 +170,7 @@ nav a:hover {
   display:block;
   position:absolute;
   color:grey;
-  top:150mm;
+  top:180mm;
   bottom:0;
   left:70mm;
   right:0;
