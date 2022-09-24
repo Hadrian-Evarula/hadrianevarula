@@ -68,6 +68,7 @@ nav a:hover {
     font-size: 80px;
     text-transform: capitalize;
     margin-bottom: 20px;
+    font-family: "Audiowide", sans-serif;
 }
 .about-text h5{
     color: white;
@@ -80,12 +81,32 @@ span{
     color: #f9004d;
 }
 .about-text p {
-    color: #fcfc;
+    color:grey;
     letter-spacing: 1px;
     line-height: 28px;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 45px;
 }
+
+ /*fade in effect */
+
+ .char{
+    font-size: 16px;
+    height: 40px;
+    animation: an 1s ease-out 1 both;
+    display: inline-block;
+}   
+ @keyframes an{
+    from{
+        opacity: 0;
+        transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+    }
+    to{
+        opacity: 1;
+        transform: perspective(500px) translate3d(0, 0, 0);
+    }
+}
+
 button{
     background-color: #f9004d;
     color: white;
@@ -101,3 +122,70 @@ button:hover{
     border: 2px solid #f9004d;
     cursor: pointer;
 }
+
+
+/* GLITCH EFFECT */
+
+
+
+h1{
+    animation: glitch 1s linear infinite;
+  }
+  
+  @keyframes glitch{
+    2%,64%{
+      transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+      transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+      transform: translate(0,0) skew(5deg); 
+    }
+  }
+  
+  h1:before,
+  h1:after{
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  
+  h1:before{
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  
+  @keyframes glitchTop{
+    2%,64%{
+      transform: translate(2px,-2px);
+    }
+    4%,60%{
+      transform: translate(-2px,2px);
+    }
+    62%{
+      transform: translate(13px,-1px) skew(-13deg); 
+    }
+  } 
+  
+  h1:after{
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+  
+  @keyframes glitchBotom{
+    2%,64%{
+      transform: translate(-2px,0);
+    }
+    4%,60%{
+      transform: translate(-2px,0);
+    }
+    62%{
+      transform: translate(-22px,5px) skew(21deg); 
+    }
+  }
+
+
+ 
