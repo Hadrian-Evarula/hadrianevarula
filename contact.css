@@ -1,5 +1,5 @@
 body {
-    background-color: #111;
+    background-color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,43 +148,6 @@ input[type="submit"]
 
 }
 
-/* nav {
-    color: white;
-    float: right;
-    margin-top: 5mm;
-    margin-right: 5%;
-    word-spacing: 15px;
-}
-
-nav,
-
-a {
-
-    text-decoration: none;
-    font-family: "Audiowide", sans-serif;
-    font-size: 18px;
-    transition: all .2s ease-in-out;
-
-    --s: 0.1em;   
-    --c: orange; 
- 
-    
-    color: white;
-    padding-bottom: var(--s);
-    background: 
-      linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
-      linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
-    -webkit-background-clip: text,padding-box;
-            background-clip: text,padding-box;
-    transition: 0.5s;
-}
-
-nav a:hover {
-  color: orange;
-  transition: 0.5s;
-  letter-spacing: 3px;
-    --_p: 100%
-} */
 
 * {
     margin: 0;
@@ -192,3 +155,57 @@ nav a:hover {
     box-sizing: border-box;
     font-family: "Audiowide", sans-serif;
 }
+
+  
+  .hero {
+    background-image: radial-gradient(50% 176%, #000 80%, #061922 100%);
+    min-height: 30rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  .hero__content {
+    position: relative;
+    align-self: center;
+    padding: 3rem 0;
+  }
+  
+  .snow {
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  #snow-top-layer {
+    will-change: transform;
+    transform: translateY(-768px);
+    -webkit-animation: fall 22.5s infinite linear;
+            animation: fall 22.5s infinite linear;
+  }
+  
+  #snow-bottom-layer {
+    will-change: transform;
+    transform: translateY(-768px);
+    -webkit-animation: fall 45s infinite linear;
+            animation: fall 45s infinite linear;
+  }
+  
+  @-webkit-keyframes fall {
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fall {
+    100% {
+      transform: translateY(0);
+    }
+  }
