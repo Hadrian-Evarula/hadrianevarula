@@ -79,7 +79,7 @@ nav a:hover {
     letter-spacing: 2px;
 }
 span{
-    color: #f9004d;
+    color: orange;
 }
 .about-text p {
     color:grey;
@@ -110,7 +110,7 @@ span{
 }
 
 button{
-    background-color: #f9004d;
+    background-color: orange;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
@@ -121,7 +121,7 @@ button{
 }
 button:hover{
     background: transparent;
-    border: 2px solid #f9004d;
+    border: 2px solid orange;
     cursor: pointer;
 }
 
@@ -208,7 +208,7 @@ h1{
   left: -50%;
   width: 380px;
   height: 420px;
-  background: linear-gradient(0deg, transparent, #f9004d, #f9004d);
+  background: linear-gradient(0deg, transparent, orange, orange);
   transform-origin: bottom right;
   animation: animate 6s linear infinite;
 
@@ -221,7 +221,7 @@ h1{
   left: -50%;
   width: 380px;
   height: 420px;
-  background: linear-gradient(0deg, transparent, #f9004d, #f9004d);
+  background: linear-gradient(0deg, transparent, orange, orange);
   transform-origin: bottom right;
   animation: animate 6s linear infinite;
   animation-delay: -3s;

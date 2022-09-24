@@ -2,7 +2,7 @@
 consoleText(['DESIGNER', 'UX/UI DESIGN', 'BACK END/FRONT END'], 'text',['orange','orange','orange']);
 
 function consoleText(words, id, colors) {
-  if (colors === undefined) colors = ['#fff'];
+  if (colors === undefined) colors = ['#f9004d'];
   var visible = true;
   var con = document.getElementById('console');
   var letterCount = 1;
