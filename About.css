@@ -49,8 +49,9 @@ nav a:hover {
     background-color: #111;
 }
 .about img{
-    height: auto;
-    width: 420px;
+    height: 416px;
+    width: 396px;
+    border-radius: 8px;
 }
 .about-text{
     width: 550px;
@@ -90,7 +91,24 @@ span{
 
  /*fade in effect */
 
- .char{
+ .char1{
+    width: 420px;
+    height: auto;
+    animation: an 1s ease-out 1 both;
+    display: inline-block;
+}   
+ @keyframes an{
+    from{
+        opacity: 0;
+        transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+    }
+    to{
+        opacity: 1;
+        transform: perspective(500px) translate3d(0, 0, 0);
+    }
+}
+
+.char{
     font-size: 16px;
     height: 40px;
     animation: an 1s ease-out 1 both;
@@ -188,4 +206,66 @@ h1{
   }
 
 
- 
+ /* FOR THE IMAGE DESIGN */
+
+ .box {
+  position: relative;
+  width: 400px;
+  height: 420px;
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, #f9004d, #f9004d);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+
+
+}
+.box::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, #f9004d, #f9004d);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+
+
+}
+
+
+@keyframes animate {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.form{
+  position: absolute;
+  inset: 2px;
+  background: #28292d;
+  z-index: 10;
+  border-radius: 8px;
+  height: 390px;
+  display: flex;
+  flex-direction: column;
+  width: 396px;
+  align-items: center;
+
+}

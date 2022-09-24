@@ -263,7 +263,7 @@ video{
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 15px;
+  font-size: 15   px;
   font-family: "Audiowide", sans-serif;
   -webkit-animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
           animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
