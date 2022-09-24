@@ -258,27 +258,26 @@ h1{
 
 /* FOR THE SECOND SECTION*/
 
-.form2{
-  inset: 2px;
-  background: #28292d;
-  z-index: 10;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  width: 396px;
-  align-items: center;
 
+.box2 {
+  position: relative;
+  width: 410px;
+  height: 420px;
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+  
 }
 
 .about #img2{
-  height: auto;
-  width: 380px;
+  height: 390%;
+  width: 350px;
   border-radius: 8px;
 }
 .box2 {
   position: relative;
   width: 400px;
-  height: 420px;
+  height: 405px;
   background: #1c1c1c;
   border-radius: 8px;
   overflow: hidden;
