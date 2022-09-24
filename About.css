@@ -91,22 +91,6 @@ span{
 
  /*fade in effect */
 
- .char1{
-    width: 420px;
-    height: auto;
-    animation: an 1s ease-out 1 both;
-    display: inline-block;
-}   
- @keyframes an{
-    from{
-        opacity: 0;
-        transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
-    }
-    to{
-        opacity: 1;
-        transform: perspective(500px) translate3d(0, 0, 0);
-    }
-}
 
 .char{
     font-size: 16px;
@@ -269,3 +253,141 @@ h1{
   align-items: center;
 
 }
+
+
+
+/* FOR THE SECOND SECTION*/
+
+.form2{
+  inset: 2px;
+  background: #28292d;
+  z-index: 10;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 396px;
+  align-items: center;
+
+}
+
+.about #img2{
+  height: auto;
+  width: 380px;
+  border-radius: 8px;
+}
+.box2 {
+  position: relative;
+  width: 400px;
+  height: 420px;
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.box2::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, grey, grey);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+
+
+}
+.box2::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, grey, grey);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+
+
+}
+
+
+
+/* KNOW ME EFFECTS*/
+
+.focus {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.2rem;
+  line-height: 1;
+  position: relative;
+  width: 179px;
+}
+.focus:before {
+  content: "Focus";
+  filter: blur(3px);
+}
+.focus:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: calc(100% + 8px);
+  top: -4px;
+  left: 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  -webkit-animation: mask-move 1s linear infinite alternate;
+          animation: mask-move 1s linear infinite alternate;
+}
+.focus--mask {
+  overflow: hidden;
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #89cb66;
+  -webkit-animation: mask-move 1s linear infinite alternate;
+          animation: mask-move 1s linear infinite alternate;
+}
+.focus--mask-inner {
+  -webkit-animation: mask-inner-move 1s linear infinite alternate;
+          animation: mask-inner-move 1s linear infinite alternate;
+}
+
+@-webkit-keyframes mask-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(129px);
+  }
+}
+@keyframes mask-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(129px);
+  }
+}
+@-webkit-keyframes mask-inner-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-129px);
+  }
+}
+@keyframes mask-inner-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-129px);
+  }
+}
+
+
