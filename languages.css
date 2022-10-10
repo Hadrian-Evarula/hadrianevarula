@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+    font-family: "Audiowide", sans-serif;
+}
+body{
+    background-color: #111;
+}
+nav {
+    color: white;
+    float: right;
+    margin-top: 5mm;
+    margin-right: 5%;
+    word-spacing: 15px;
+}
+
+nav,
+
+a {
+
+    text-decoration: none;
+    font-family: "Audiowide", sans-serif;
+    font-size: 18px;
+    transition: all .2s ease-in-out;
+
+    --s: 0.1em;   /* the thickness of the line */
+    --c: orange; /* the color */
+ 
+    
+    color: white;
+    padding-bottom: var(--s);
+    background: 
+      linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+      linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: 0.5s;
+}
+
+nav a:hover {
+  color: orange;
+  transition: 0.5s;
+  letter-spacing: 3px;
+    --_p: 100%
+}
