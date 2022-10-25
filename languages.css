@@ -45,13 +45,13 @@ nav a:hover {
 /* RATINGS */
 
 body {
-    background: #1D1F20;
+    background: #000;
     padding: 16px;
   }
   
   .title {
     text-align: center;
-    color: #fff;
+    color: orange;
     font-size: 20px;
     padding: 0px 10px 5px 10px;
     margin-top: 13vh;
@@ -87,3 +87,8 @@ body {
     max-width: 800px;
     margin: auto;
   }
+
+
+
+
+  
