@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
     <link rel="stylesheet" href="./languages.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
     <title>languages</title>
 </head>
 <body>
@@ -14,5 +18,22 @@
         <a href="languages.html">languages</a>
         <a href="contact.html">contact/me</a>
     </nav>
+
+
+    <div class="title">Languages Ratings in Percentage</div>
+
+<div class="tooltip">
+  <div class="box box1"></div>
+  <div class="text">40% lower bound</div>
+  <div class="box box2"></div>
+  <div class="text">60% average</div>
+  <div class="box box3"></div>
+  <div class="text">80% upper bound</div>
+</div>
+
+<div class="chart-container bar-line"> <canvas id="HorizontalBarWithLines" width="700"></canvas>
+</div>
+
 </body>
+<script src="./languages.js"></script>  
 </html>
