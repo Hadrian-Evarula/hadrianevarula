@@ -133,9 +133,255 @@
 
     </div>
 
+<div style="color: white;">
+    <p>Index</p>
+    <div>
+        <pre style="color: white;" ><code style="color: white;">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang=&quot;en&quot;&gt;
+            &lt;head&gt;
+                &lt;meta charset=&quot;UTF-8&quot;&gt;
+                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css&quot; integrity=&quot;sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh&quot; crossorigin=&quot;anonymous&quot;&gt;
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css&quot;&gt;
+                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css&quot;&gt;
+    
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css&quot; integrity=&quot;sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh&quot; crossorigin=&quot;anonymous&quot;&gt;
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css&quot;&gt;
+                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js&quot;&gt;&lt;/script&gt; &lt;!-- Include SweetAlert --&gt;
+                &lt;title&gt;Basic CRUD&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+    
+                &lt;div class=&quot;container&quot;&gt;
+                &lt;h2&gt;Create Form&lt;/h2&gt;
+                &lt;form action=&quot;./CRUD/create.php&quot; method=&quot;post&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;label for=&quot;firstname&quot;&gt;First Name:&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;firstname&quot; placeholder=&quot;Enter first name&quot; name=&quot;firstname&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;label for=&quot;lastname&quot;&gt;LastName:&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;lastname&quot; placeholder=&quot;Enter last name&quot; name=&quot;lastname&quot; required&gt;
+                    &lt;/div&gt;
+    
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label for=&quot;age&quot;&gt;Age:&lt;/label&gt;
+                        &lt;input type=&quot;number&quot; class=&quot;form-control&quot; id=&quot;age&quot; placeholder=&quot;Enter last name&quot; name=&quot;age&quot; required&gt;
+                    &lt;/div&gt;
+    
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Submit&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;/div&gt;
+    
+                &lt;br&gt;&lt;hr&gt;
+    
+                &lt;div class=&quot;container&quot;&gt;
+                &lt;h2&gt;Retrieve Data&lt;/h2&gt;           
+                &lt;table class=&quot;table&quot;&gt;
+                    &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;ID&lt;/th&gt;
+                    &lt;th&gt;Firstname&lt;/th&gt;
+                    &lt;th&gt;Lastname&lt;/th&gt;
+                    &lt;th&gt;Age&lt;/th&gt;
+                    &lt;th&gt;Action&lt;/th&gt;&gt;
+                    &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                    &lt;?php
+                    include './connectionDB/connection.php';
+    
+                    $sql = &quot;SELECT * FROM users&quot;;
+                    $result = $conn-&gt;query($sql);
+    
+                    if ($result-&gt;num_rows &gt; 0) {
+                        while ($row = $result-&gt;fetch_assoc()) {
+                        echo &quot;&lt;tr&gt;&quot;;
+                        echo &quot;&lt;td&gt;&quot; . $row[&quot;id&quot;] . &quot;&lt;/td&gt;&quot;;
+                        echo &quot;&lt;td&gt;&quot; . $row[&quot;firstname&quot;] . &quot;&lt;/td&gt;&quot;;
+                        echo &quot;&lt;td&gt;&quot; . $row[&quot;lastname&quot;] . &quot;&lt;/td&gt;&quot;;
+                        echo &quot;&lt;td&gt;&quot; . $row[&quot;age&quot;] . &quot;&lt;/td&gt;&quot;;
+                        echo &quot;&lt;td&gt;
+                                    &lt;a href='update.php?id=&quot; . $row[&quot;id&quot;] . &quot;' class='btn btn-warning btn-sm'&gt;Update&lt;/a&gt;
+                                    &lt;button onclick='confirmDelete(&quot; . $row[&quot;id&quot;] . &quot;)' class='btn btn-danger btn-sm'&gt;Delete&lt;/button&gt;
+                                  &lt;/td&gt;&quot;;
+                        echo &quot;&lt;/tr&gt;&quot;;
+                        }
+                    } else {
+                        echo &quot;&lt;tr&gt;&lt;td colspan='4'&gt;No records found&lt;/td&gt;&lt;/tr&gt;&quot;;
+                    }
+    
+                    $conn-&gt;close();
+                    ?&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+                &lt;/div&gt;
+                &lt;script&gt;
+                // Function to handle deletion confirmation using SweetAlert
+                function confirmDelete(id) {
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: 'You will not be able to recover this user!',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes, delete it!',
+                        cancelButtonText: 'No, keep it'
+                    }).then((result) =&gt; {
+                        if (result.isConfirmed) {
+                        // If user confirms deletion, redirect to delete.php with the user's id
+                        window.location.href = 'delete.php?id=' + id;
+                        }
+                    });
+                }
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </code></pre>
+    </div>
+    
 
+</div>
 
-      
+<div style="color: white;">
+    <p style="color: white;">Create</p>
+    <pre style="color: white;"><code style="color: white;">
+        &lt;?php
+
+        include './../connectionDB/connection.php';
+
+        $firstname = $_POST ['firstname'];
+        $lastname = $_POST ['lastname'];
+        $age = $_POST ['age'];
+
+        $sql = &quot;INSERT INTO users (firstname,lastname,age) VALUES ('$firstname','$lastname','$age')&quot;;
+
+        if($conn -&gt; query($sql) == TRUE){
+            echo&quot;Created user successfully!&quot;;
+            header (&quot;location: ../index.php&quot;);
+            exit();
+        }else{
+            echo &quot;Error: &quot; . $sql . &quot;&lt;br&gt;&quot; . $conn -&gt; error;
+        }
+
+        $conn -&gt; close();
+        ?&gt;
+    </code></pre>
+</div>
+
+<div style="color: white;">
+    <p>Update</p>
+    <pre style="color: white;"><code style="color: white;">
+        &lt;?php
+        // Enable error reporting
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
+
+        include './connectionDB/connection.php';
+
+        // Check if the id is set in the URL
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+
+            // Fetch user data from the database
+            $sql = "SELECT * FROM users WHERE id=$id";
+            $result = $conn->query($sql);
+
+            if ($result) {
+                if ($result->num_rows == 1) {
+                    $row = $result->fetch_assoc();
+                    $firstname = $row['firstname']; 
+                    $lastname = $row['lastname'];
+                    $age = $row['age'];
+                } else {
+                    echo "No user found with ID: $id";
+                    exit();
+                }
+            } else {
+                echo "Error fetching user data: " . $conn->error;
+                exit();
+            }
+        } else {
+            echo "ID parameter is missing in the URL";
+            exit();
+        }
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
+            $id = $_POST['id'];
+            $newFirstname = $_POST['newFirstname'];
+            $newLastname = $_POST['newLastname'];
+            $newAge = $_POST['newAge'];
+
+            // Update the record in the database
+            $sql = "UPDATE users SET firstname='$newFirstname',lastname='$newLastname',age='$newAge' WHERE id=$id";
+
+            if ($conn->query($sql) === TRUE) {
+                header("Location: ./index.php");
+                exit();
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+        }
+
+        // Debugging: Output POST data
+        echo "POST Data: &lt;pre&gt;";
+        var_dump($_POST);
+        echo "&lt;/pre&gt;";
+        ?&gt;
+    </code></pre>
+</div>
+
+<div style="color: white;">
+    <p>Delete</p>
+    <pre style="color: white;" ><code style="color: white;">
+        &lt;?php
+        include './connectionDB/connection.php';
+
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+
+            $sql = "DELETE FROM users WHERE id=$id";
+
+            if($conn->query($sql) === TRUE){
+                header("Location: index.php");
+                exit();
+            }else{
+                echo "Error fetching : " . $conn->error;
+            }
+        }else{
+            echo "ID parameter is missing in the URL";
+        }
+        ?&gt;
+    </code></pre>
+</div>
+<div style="color: white;">
+    <p style="color: white;">Connection</p>
+    <pre style="color: white;"><code style="color: white;">
+        &lt;?php
+
+        $hostname = "localhost";
+        $username = "root";
+        $password = "";
+        $dn_name = "crud_app";
+
+        // Create connection
+        $conn = new mysqli($hostname, $username, $password, $dn_name);
+
+        //Check Connection
+        if(!$conn){
+            die("Connection Failed;" . mysqli_connect_error());
+        }
+
+        echo "Connection build successfully";
+        ?&gt;
+    </code></pre>
+</div>
 
 </body>
 <script src="./script1.js"></script>
